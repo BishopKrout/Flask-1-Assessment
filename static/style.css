@@ -1,0 +1,49 @@
+body {
+    background-color: #E5E5E5;
+    display: grid;
+    place-items: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 75px;
+    margin-top: 0;
+    margin-bottom: 40;
+}
+
+.converter {
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+
+}
+
+#currency {
+    width: 200px;
+    height: 22px;
+}
+
+#convert {
+    margin: 10px;
+    background-color: blue;
+    color: whitesmoke;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#convert:hover {
+    cursor: pointer;
+}
+
+#conversion {
+    text-align: center;
+    font-size: 40px;
+}
+
+.options-container  {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+

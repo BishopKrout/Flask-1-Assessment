@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h1>Currency Converter</h1>
+
+<form method="POST" action="" class="converter">
+    <label for="from_currency">Converting From</label>
+    <input title="Use three letter currency code. Ex: USD" type="text" id="currency" name="from_currency" pattern="[A-Z]{3}"maxlength="3" required>
+    <label for="to_currency">Converting To</label>
+    <input title="Use three letter currency code. Ex: USD" type="text" id="currency" name="to_currency" pattern="[A-Z]{3}" maxlength="3" required>
+    <label for="amount">Amount</label>
+    <input title="Only enter numbers." type="text" id="currency" name="amount" pattern="[0-9]*" required>
+    <input type="submit" value="Convert" id="convert">
+</form>
+    <br>
+    {% if converted_amount %}
+    <p id="conversion"> {{from_symbol}}{{ amount }} {{ from_currency }} is equal to 
+    {{to_symbol}}{{ converted_amount}} {{ to_currency }} </p>
+    {% elif formatted_number %}
+    <p id="conversion"> {{from_symbol}}{{ amount }} {{ from_currency }} is equal to 
+    {{to_symbol}}{{ formatted_number}} {{ to_currency }} </p>
+    {% endif %}
+
+<div class="options-container">
+<h2>Currency Choices</h2>
+<ul id="options">
+    <li>EUR - Euro Member Countries </li>
+    <li>IDR - Indonesia Rupiah </li>
+    <li>BGN - Bulgaria Lev </li>
+    <li>ILS - Israel Shekel </li>
+    <li>GBP - United Kingdom Pound </li>
+    <li>DKK - Denmark Krone </li>
+    <li>CAD - Canada Dollar </li>
+    <li>JPY - Japan Yen </li>
+    <li>HUF - Hungary Forint </li>
+    <li>RON - Romania New Leu </li>
+    <li>MYR - Malaysia Ringgit </li>
+    <li>SEK - Sweden Krona </li>
+    <li>SGD - Singapore Dollar </li>
+    <li>HKD - Hong Kong Dollar </li>
+    <li>AUD - Australia Dollar </li>
+    <li>CHF - Switzerland Franc </li>
+    <li>KRW - Korea (South) Won </li>
+    <li>CNY - China Yuan Renminbi </li>
+    <li>TRY - Turkey Lira </li>
+    <li>HRK - Croatia Kuna </li>
+    <li>NZD - New Zealand Dollar</li> 
+    <li>THB - Thailand Baht </li>
+    <li>USD - United States Dollar </li> 
+    <li>NOK - Norway Krone </li>
+    <li>RUB - Russia Ruble </li>
+    <li>INR - India Rupee </li>
+    <li>MXN - Mexico Peso </li>
+    <li>CZK - Czech Republic Koruna </li> 
+    <li>BRL - Brazil Real </li>
+    <li>PLN - Poland Zloty </li>
+    <li>PHP - Philippines Peso </li>
+    <li>ZAR - South Africa Rand </li>
+</ul>
+</div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>
